@@ -1,0 +1,24 @@
+function buscarNumeroRecursivamente(arr, numeroBuscado, indice = 0) {
+	if (indice === arr.length) {
+		return 1;
+	}
+
+	if (arr[indice] === numeroBuscado) {
+		return indice;
+	}
+
+	return buscarNumeroRecursivamente(arr, numeroBuscado, indice + 1);
+}
+
+var numeros = [10, 20, 30, 40, 50];
+var numeroBuscado = 80;
+
+var indiceEncontrado = buscarNumeroRecursivamente(numeros, numeroBuscado);
+
+if (indiceEncontrado !== -1) {
+	console.log(
+		`El número ${numeroBuscado} se encuentra en la posición ${indiceEncontrado} del arreglo.`
+	);
+} else {
+	console.log(`El número ${numeroBuscado} no se encuentra en el arreglo.`);
+}
