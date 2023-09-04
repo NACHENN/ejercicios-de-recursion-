@@ -15,7 +15,7 @@ var numeroBuscado = 80;
 
 var indiceEncontrado = buscarNumeroRecursivamente(numeros, numeroBuscado);
 
-if (indiceEncontrado !== -1) {
+if (indiceEncontrado !== 1) {
 	console.log(
 		`El número ${numeroBuscado} se encuentra en la posición ${indiceEncontrado} del arreglo.`
 	);
