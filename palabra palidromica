@@ -1,0 +1,22 @@
+function esPalindromo(palabra) {
+    // Caso base: una cadena vacía o de una sola letra siempre es palíndroma
+    if (palabra.length <= 1) {
+      return true;
+    }
+  
+    // Comparamos el primer y último carácter de la palabra
+    if (palabra[0] !== palabra[palabra.length - 1]) {
+      return false;
+    }
+  
+    // Llamamos recursivamente a la función con la palabra excluyendo el primer y último carácter
+    return esPalindromo(palabra.substring(1, palabra.length - 1));
+  }
+  
+  // Ejemplos de uso
+  const palabra1 = "oso";
+  const palabra2 = "javascript";
+  
+  console.log(`'${palabra1}' es palíndromo: ${esPalindromo(palabra1)}`);
+  console.log(`'${palabra2}' es palíndromo: ${esPalindromo(palabra2)}`);
+  
