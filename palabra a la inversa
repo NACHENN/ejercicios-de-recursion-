@@ -1,0 +1,15 @@
+function invertirCadenaRecursiva(cadena) {
+    // Caso base: si la cadena es vacía, devolvemos una cadena vacía
+    if (cadena === "") {
+      return "";
+    } else {
+      // Llamada recursiva: invertimos la cadena excluyendo el último carácter
+      return cadena.slice(-1) + invertirCadenaRecursiva(cadena.slice(0, -1));
+    }
+  }
+  
+  // Ejemplo de uso
+  const cadena = "caballo!";
+  const cadenaInvertida = invertirCadenaRecursiva(cadena);
+  console.log(cadenaInvertida);
+  
