@@ -1,0 +1,25 @@
+function binaryToDecimal(binaryString) {
+    // Caso base: si la cadena binaria es vacía, retornamos 0
+    if (binaryString === "") {
+      return 0;
+    }
+  
+    // Obtenemos el último dígito de la cadena binaria
+    const lastDigit = binaryString[binaryString.length - 1];
+  
+    // Convertimos el dígito a número y calculamos su valor
+    const digitValue = parseInt(lastDigit, 2);
+  
+    // Recursivamente, convertimos el resto de la cadena binaria
+    const restOfBinary = binaryString.slice(0, binaryString.length - 1);
+    const recursiveResult = binaryToDecimal(restOfBinary);
+  
+    // Retornamos el resultado sumando el valor del último dígito
+    return recursiveResult * 2 + digitValue;
+  }
+  
+  // Ejemplo de uso
+  const binaryNumber = "1010111"; // Cambia esto por tu número binario
+  const decimalNumber = binaryToDecimal(binaryNumber);
+  console.log(`El número binario ${binaryNumber} es equivalente a ${decimalNumber} en decimal.`);
+  
